@@ -151,6 +151,7 @@ sequenceDiagram
     loop Every time alert triggers
         Glitchtip->>Glitchtip-Jira integration: Issue info
         Glitchtip-Jira integration->>Jira: Check if task exists?
+        Note left of Jira: cache the result for<br>some time so that<br>Jira is not exhausted
         alt exists
             Glitchtip-Jira integration->>Glitchtip-Jira integration: Discard the issue
         else doesn't exist
@@ -167,4 +168,4 @@ Because this metric has no boundaries. It can have as many labels as issues in t
 
 > What if there's a bug generating thousands of new issues (not events) per minute?
 
-We should set some limits per project so that we can prevent floading Jira with new tickets.
+We should set some limits per project or some caching mechanism in the tool so that we can prevent floading Jira with new tickets.
