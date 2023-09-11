@@ -169,3 +169,7 @@ Because this metric has no boundaries. It can have as many labels as issues in t
 > What if there's a bug generating thousands of new issues (not events) per minute?
 
 We should set some limits per project or some caching mechanism in the tool so that we can prevent floading Jira with new tickets.
+
+> How to identify the Jira task and Glitchtip issue?
+
+We can use the issue `title` as Jira task name, but it's prone to duplications as someone can rename the task. We can use Jira labels instead and store the `title_link`, which won't change in Glitchtip neither.
