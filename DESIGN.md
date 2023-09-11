@@ -132,7 +132,7 @@ alerts:
     url: https://glitchtip-jira-integration.example.com/api/v1/MY_JIRA_PROJECT
 ```
 
-It's not even necessary to add one endpoint everytime a team creates a Jira project (which is not common tho), we can have a wildcard at `/api/v1/{jira_project}` and use the Jira project as a variable for interacting with the JIRA API.
+It's not even necessary to add one endpoint everytime a team creates a Jira project (which is not common tho), we can have a wildcard at `/api/v1/{jira_project_key}` and use the Jira project as a variable for interacting with the JIRA API.
 
 ## Summary
 
